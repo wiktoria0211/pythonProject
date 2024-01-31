@@ -1,7 +1,7 @@
 from getpass import getpass
 from DML import GUI
 
-### LOGIN ###
+#LOGIN#
 def okno_logowania():
     while True:
         login = input('Enter login: ')

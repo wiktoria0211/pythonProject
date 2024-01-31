@@ -2,7 +2,7 @@ from DDL import *
 import folium
 
 
-### SZKOLA ###
+#SZKOLA#
 def utworz_szkole():
     nazwa = input('Nazwa: ')
     kod = input('Kod szkoły: ')
@@ -51,7 +51,7 @@ def modyfikuj_szkole():
     session.commit()
 
 
-### PRACOWNIK ###
+#PRACOWNIK#
 def utworz_pracownika():
     imie = input('Imię: ')
     nazwisko = input('Nazwisko: ')
@@ -157,7 +157,7 @@ def modyfikuj_pracownika():
     session.commit()
 
 
-### UCZEN ###
+#UCZEN#
 def utworz_ucznia():
     imie = input('Imię: ')
     nazwisko = input('Nazwisko: ')
@@ -250,7 +250,7 @@ def modyfikuj_ucznia():
     session.commit()
 
 
-### MAPY ###
+#MAPY#
 
 def mapa_szkol():
     mapa = folium.Map(location=[52.3, 21.0], tiles='OpenStreetMap', zoom_start=7)

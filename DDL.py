@@ -4,7 +4,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 from geoalchemy2 import Geometry
 from UTILITY import *
 
-### POŁĄCZENIE Z BAZĄ  ###
+#POŁĄCZENIE Z BAZĄ#
 db_params = sqlalchemy.URL.create(
     drivername='postgresql+psycopg2',
     username='postgres',
@@ -19,7 +19,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
-# TABELE #
+#TABELE#
 class Szkola(Base):
     __tablename__ = 'Szkoly'
     id = Column(Integer(), Sequence("id_seq"), primary_key=True)

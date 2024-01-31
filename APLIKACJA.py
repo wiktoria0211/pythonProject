@@ -7,7 +7,7 @@ from shapely import wkb
 from getpass import getpass
 from geopy.geocoders import Nominatim
 
-### POŁĄCZENIE Z BAZĄ ###
+#POŁĄCZENIE Z BAZĄ#
 db_params = sqlalchemy.URL.create(
     drivername='postgresql+psycopg2',
     username='postgres',
@@ -22,7 +22,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
-### TABELE ###
+#TABELE#
 class Szkola(Base):
     __tablename__ = 'Szkoly'
     id = Column(Integer(), Sequence("id_seq"), primary_key=True)
@@ -84,7 +84,7 @@ class Uczen(Base):
 Base.metadata.create_all(engine)
 
 
-### FUNCTIONAL ###
+#FUNKCJONALNOSC#
 def convert_point(wkb_point):
     point = wkb.loads(str(wkb_point), hex=True)
     return (point.y, point.x)
@@ -195,7 +195,7 @@ def GUI():
                 mapa_uczniow_z_szkoly(klasa)
 
 
-### SZKOLA ###
+#SZKOLA#
 def utworz_szkole():
     nazwa = input('Nazwa: ')
     kod = input('Kod szkoły: ')
@@ -244,7 +244,7 @@ def modyfikuj_szkole():
     session.commit()
 
 
-### PRACOWNIK ###
+#PRACOWNIK#
 def utworz_pracownika():
     imie = input('Imię: ')
     nazwisko = input('Nazwisko: ')
@@ -350,7 +350,7 @@ def modyfikuj_pracownika():
     session.commit()
 
 
-### UCZEN ###
+#UCZEN#
 def utworz_ucznia():
     imie = input('Imię: ')
     nazwisko = input('Nazwisko: ')
@@ -443,7 +443,7 @@ def modyfikuj_ucznia():
     session.commit()
 
 
-### MAPY ###
+#MAPY#
 
 def mapa_szkol():
     mapa = folium.Map(location=[52.3, 21.0], tiles='OpenStreetMap', zoom_start=7)
