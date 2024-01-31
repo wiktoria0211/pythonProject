@@ -19,7 +19,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
-### TABELE ###
+# TABELE #
 class Szkola(Base):
     __tablename__ = 'Szkoly'
     id = Column(Integer(), Sequence("id_seq"), primary_key=True)
